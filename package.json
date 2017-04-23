@@ -1,6 +1,6 @@
 {
   "name": "apac-extend",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A extend wrapper for apac, custom response with more response reduce",
   "main": "index.js",
   "scripts": {
@@ -11,12 +11,17 @@
     "README.md",
     "package.json"
   ],
-  "keywords": ["amazon", "apac client", "amazon product search api"],
+  "keywords": [
+    "amazon",
+    "apac client",
+    "amazon product search api"
+  ],
   "bugs": "",
   "author": "gunivan",
   "license": "ISC",
   "dependencies": {
     "apac": "3.0.2",
+    "es6-promise": "^4.1.0",
     "flat": "2.0.1"
   }
 }
