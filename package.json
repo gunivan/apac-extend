@@ -1,6 +1,6 @@
 {
   "name": "apac-extend",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A extend wrapper for apac, custom response with more response reduce",
   "main": "index.js",
   "scripts": {

@@ -12,23 +12,25 @@ Each method takes an `options` hash as the first argument, and a callback as the
 
 ~~~javascript
 
-var AmazonAPI = require('apac-extend');
+var amazon = require('apac-extend');
 
-var amazon = new AmazonAPI({
+var client = amazon.creatClient({
   accessKeyId     : //your access key,
   secretAccessKey : //your secret access key,
   associateId     : //your associate ID
 });
 
 
-amazon.getItemsInBrowseNode({
+client.itemSearch({
   SearchIndex: 'DVD',
   Director: 'Quentin Tarantino',
   Actor: 'Samuel L. Jackson',
   AudienceRating: 'R',
   ResponseGroup: 'ItemAttributes,Offers,Images'
-}, function (res, err) {
+}).then(function (res) {
   console.log(res);
+}).catch(function(err){
+  console.error(err);
 });
 
 ~~~
@@ -37,17 +39,17 @@ amazon.getItemsInBrowseNode({
 
 Amazon API Method   |   Our Method
 --------------------|------------------
-`BrowseNodeLookup`  | `lookupBrowseNode`
-`ItemSearch`        | `getItemsInBrowseNode`
-`ItemLookup`        | `getItemDetail`
-`SimilarityLookup`  | `getSimilarItems`
+`BrowseNodeLookup`  | `browseNodeLookup`
+`ItemSearch`        | `itemSearch`
+`ItemLookup`        | `itemLookup`
+`SimilarityLookup`  | `similarityLookup`
 `CartAdd`           | `addToCart`
 `CartClear`         | `clearCart`
 `CartCreate`        | `createCart`
 `CartGet`           | `getCart`
 `CartModify`        | `modifyCart`
 
-- With `getItemsInBrowseNode`, `getItemDetail`, `getSimilarItems` and `lookupBrowseNode` response will be:
+- With `browseNodeLookup`, `itemSearch`, `itemLookup` and `similarityLookup` response will be:
 ~~~javascript
 {
   totalResults: '',
@@ -61,13 +63,13 @@ Amazon API Method   |   Our Method
 
 ~~~javascript
 
-var AmazonAPI = require('apac-extend');
+var amazon = require('apac-extend');
 
-var amazon = new AmazonAPI({
+var client = amazon.createClient({
   accessKeyId: //your access key
   secretAccessKey: //your secret access key
   associateId: //your associate ID
-  locale: 'UK'
+  locale: 'uk'
 });
 
 ~~~
